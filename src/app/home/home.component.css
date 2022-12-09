@@ -1,0 +1,17 @@
+.size {
+    width: 20%;
+    display: flex;
+    margin: 0 auto;
+}
+
+
+.search {
+    width: 40%;
+    display: flex;
+    margin: 0 auto;
+}
+
+
+.example-form {
+ margin-top: 5cm;
+}

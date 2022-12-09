@@ -1,0 +1,119 @@
+<mat-card class="example-card">
+    <span><br></span>
+    <mat-card-header class="butt1">
+        <mat-card-title color="primary">
+            <h1>Tell us what you Need</h1>
+        </mat-card-title>
+    </mat-card-header>
+    <span><br></span>
+    <form [formGroup]="categoriesForm" novalidate class="d-flex-center">
+        <!-- input type Name -->
+        <mat-form-field class="example-full-width1" appearance="outline">
+            <mat-label>Product Name</mat-label>
+            <input matInput placeholder="Enter Product/Service Name" formControlName="product">
+            <mat-icon matSuffix>perm_identity</mat-icon>
+
+            <mat-error
+                *ngIf="categoriesForm.get('product')?.invalid && (categoriesForm.get('product')?.dirty || categoriesForm.get('product')?.touched) && categoriesForm.get('product')?.errors?.required">
+                product is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <table class="example-full-width" cellspacing="0">
+
+            <tr>
+                <td>
+                    <!-- input type Name -->
+                    <mat-form-field appearance="outline">
+                        <mat-label>Full Name</mat-label>
+                        <input matInput placeholder="Enter your name" formControlName="name">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+                        <mat-error
+                            *ngIf="categoriesForm.get('name')?.invalid && (categoriesForm.get('name')?.dirty || categoriesForm.get('name')?.touched) && categoriesForm.get('name')?.errors?.required">
+                            Name is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <!-- input type email -->
+                    <mat-form-field appearance="outline">
+                        <mat-label>E-Mail</mat-label>
+                        <input matInput placeholder="E-Mail" formControlName="email">
+                        <mat-icon matSuffix>alternate_email</mat-icon>
+
+                        <mat-error
+                            *ngIf="!categoriesForm.get('email')?.errors?.required && (categoriesForm.get('email')?.errors?.pattern)">
+                            Please enter a valid <strong>email address</strong>
+                        </mat-error>
+                        <mat-error
+                            *ngIf="categoriesForm.get('email')?.invalid && (categoriesForm.get('email')?.dirty || categoriesForm.get('email')?.touched) && categoriesForm.get('email')?.errors?.required">
+                            Email is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+        <mat-divider></mat-divider>
+        <!-- button Submit -->
+        <mat-card-actions>
+            <button class="butt1" mat-raised-button color="primary" mat-button>Submit Requirement</button>
+        </mat-card-actions>
+    </form>
+</mat-card>
+
+
+
+<div class="container" *ngFor="let card of cards">
+    <div class="row">
+        <div class="col-sm">
+            <div class="card mb-3" style="max-width: 400px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img [src]="card.img" class="img-fluid rounded-start" alt="card">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{card.title}}</h5>
+                            <p class="card-text"> {{card.description}}</p>
+                            <p class="card-text"><small class="text-muted">{{card.buttonText}}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card mb-3" style="max-width: 400px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img [src]="card.img" class="img-fluid rounded-start" alt="card">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{card.title}}</h5>
+                            <p class="card-text"> {{card.description}}</p>
+                            <p class="card-text"><small class="text-muted">{{card.buttonText}}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card mb-3" style="max-width: 400px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img [src]="card.img" class="img-fluid rounded-start" alt="card">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{card.title}}</h5>
+                            <p class="card-text"> {{card.description}}</p>
+                            <p class="card-text"><small class="text-muted">{{card.buttonText}}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<span><br><br><br></span>

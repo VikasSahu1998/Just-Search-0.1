@@ -1,0 +1,92 @@
+
+<h1 mat-dialog-title>Create your Account<mat-icon [mat-dialog-close]="true"
+        style="margin-left: 6.5cm;">highlight_off</mat-icon>
+</h1>
+<div mat-dialog-content>
+
+
+    <form [formGroup]="singupForm" novalidate>
+        <div class="example-container">
+        <div>
+            <!-- input type Name -->
+            <mat-form-field appearance="outline">
+                <mat-label>Full Name</mat-label>
+                <input matInput placeholder="John kerry" formControlName="name">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+                <mat-error
+                    *ngIf="singupForm.get('name')?.invalid && (singupForm.get('name')?.dirty || singupForm.get('name')?.touched) && singupForm.get('name')?.errors?.required">
+                    Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div> <!-- input type email -->
+            <mat-form-field appearance="outline">
+                <mat-label>E-Mail</mat-label>
+                <input matInput placeholder="E-Mail" formControlName="email">
+                <mat-icon matSuffix>alternate_email</mat-icon>
+
+                <mat-error
+                    *ngIf="!singupForm.get('email')?.errors?.required && (singupForm.get('email')?.errors?.pattern)">
+                    Please enter a valid <strong>email address</strong>
+                </mat-error>
+                <mat-error
+                    *ngIf="singupForm.get('email')?.invalid && (singupForm.get('email')?.dirty || singupForm.get('email')?.touched) && singupForm.get('email')?.errors?.required">
+                    Email is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div> <!-- input type Number -->
+
+            <mat-form-field appearance="outline">
+                <mat-label>Phone Number</mat-label>
+                <span matPrefix>+91</span>
+                <input matInput placeholder="Phone Number" formControlName="PhoneNumber">
+                <mat-icon matSuffix>call</mat-icon>
+
+                <mat-error
+                    *ngIf="!singupForm.get('PhoneNumber')?.errors?.required && (singupForm.get('PhoneNumber')?.errors?.pattern)">
+                    Please enter valid Number
+                </mat-error>
+                <mat-error
+                    *ngIf="singupForm.get('PhoneNumber')?.invalid && (singupForm.get('PhoneNumber')?.dirty || singupForm.get('PhoneNumber')?.touched) && singupForm.get('PhoneNumber')?.errors?.required">
+                    Phone number is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div> <!-- input type Password -->
+
+            <mat-form-field appearance="outline">
+                <mat-label>password</mat-label>
+                <input matInput [type]="showPassword ? 'text' : 'password'" name="password" placeholder="Password"
+                    formControlName="password">
+                <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                    {{showPassword?'visibility':'visibility_off'}}
+                </mat-icon>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>confrim Password</mat-label>
+                <input matInput [type]="showPassword ? 'text' : 'password'" name="password"
+                    placeholder="confirm Passwordr" formControlName="confirmPassword">
+                <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                    {{showPassword?'visibility':'visibility_off'}}
+                </mat-icon>
+            </mat-form-field>
+            <span *ngIf="passwordMatchError">
+                Password does not match
+            </span>
+        </div>
+
+        <mat-divider></mat-divider>
+       
+        <!-- button Submit -->
+        <div>
+            <button style="width:100%; margin-top: 10px;" mat-raised-button color="primary" mat-button>Singup</button>
+        </div>
+        </div>
+    </form>
+</div>
