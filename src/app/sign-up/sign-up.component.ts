@@ -3,7 +3,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { SignInComponent } from '../sign-in/sign-in.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-sign-up',
@@ -24,20 +25,20 @@ export class SignUpComponent {
   }
 
   public showPassword: boolean = false;
- 
-  singupForm : FormGroup |any;
 
-  constructor(private formbuilder: FormBuilder,private router: Router, public dialog: MatDialog,) { }
+  singupForm: FormGroup | any;
+
+  constructor(private formbuilder: FormBuilder, private router: Router, public dialog: MatDialog, private http: HttpClient ,private dialogref: MatDialogRef<SignUpComponent>,) { }
 
   ngOnInit(): void {
     this.singupForm = new FormGroup({
       name: new FormControl('', [Validators.required,]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      PhoneNumber:new FormControl('',[Validators.required,Validators.pattern(/^[6-9]\d{9}$/)]),
+      PhoneNumber: new FormControl('', [Validators.required, Validators.pattern(/^[6-9]\d{9}$/)]),
       password: new FormControl('', [Validators.required]),
       confirmPassword: new FormControl('', [Validators.required]),
     },
-    [SignUpComponent.MatchValidator('password', 'confirmPassword')]
+      [SignUpComponent.MatchValidator('password', 'confirmPassword')]
     );
   }
 
@@ -51,5 +52,14 @@ export class SignUpComponent {
   public togglePasswordVisibility(): void {
     this.showPassword = !this.showPassword;
   }
-
+  onsingupsubmit() {
+    this.http.post<any>("http://localhost:3000/signup", this.singupForm.value).subscribe(res => {
+      alert("signup Succesfully");
+      this.singupForm.reset();
+      this.dialogref.close('save');
+    }, err => {
+      alert("error");
+    }
+    )
+  }
 }

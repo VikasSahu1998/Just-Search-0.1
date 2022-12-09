@@ -1,0 +1,23 @@
+{
+  "signup": [
+    {
+      "name": "vikas",
+      "email": "sahu@gmail.com",
+      "PhoneNumber": "9856324756",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "id": 1
+    }
+  ],
+
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

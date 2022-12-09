@@ -5,7 +5,7 @@
 <div mat-dialog-content>
 
 
-    <form [formGroup]="singupForm" novalidate>
+    <form [formGroup]="singupForm" (ngSubmit)="onsingupsubmit()" novalidate>
         <div class="example-container">
         <div>
             <!-- input type Name -->
@@ -42,7 +42,7 @@
 
             <mat-form-field appearance="outline">
                 <mat-label>Phone Number</mat-label>
-                <span matPrefix>+91</span>
+                <span matPrefix>+91 &nbsp;</span>
                 <input matInput placeholder="Phone Number" formControlName="PhoneNumber">
                 <mat-icon matSuffix>call</mat-icon>
 

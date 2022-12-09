@@ -10,6 +10,9 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 })
 export class AppComponent {
   title = 'Just-Search';
+  
+  //button text variable
+btnVal = "LogIn";
   constructor(private router: Router, public dialog: MatDialog,) { }
 
   Onhome(): void {
@@ -20,9 +23,11 @@ export class AppComponent {
     this.dialog.open(SignInComponent, {
       width: '27%',
     })
+    this.btnVal = "LogOut"
   }
 
   Oncategories(): void {
     this.router.navigate(['Categories']);
   }
+
 }

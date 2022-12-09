@@ -1,16 +1,17 @@
 <mat-tab-group animationDuration="0ms">
     <mat-tab>
         <ng-template mat-tab-label>
-            <mat-icon  matPrefix class="example-tab-icon">account_circle</mat-icon>
-            Sign-in
+          
+                Sign-in
+           
         </ng-template>
-
+       
         <h1 mat-dialog-title>Sign in<mat-icon [mat-dialog-close]="true"
                 style="margin-left: 9.5cm;">highlight_off</mat-icon>
         </h1>
         <div mat-dialog-content>
 
-            <form [formGroup]="singupForm" novalidate class="d-flex-center">
+            <form [formGroup]="singinForm" novalidate (ngSubmit)="onsinginsubmit()" class="d-flex-center">
                 <div class="example-container">
                     <div>
                         <!-- input type email -->
@@ -20,11 +21,11 @@
                             <mat-icon matSuffix>alternate_email</mat-icon>
 
                             <mat-error
-                                *ngIf="!singupForm.get('email')?.errors?.required && (singupForm.get('email')?.errors?.pattern)">
+                                *ngIf="!singinForm.get('email')?.errors?.required && (singinForm.get('email')?.errors?.pattern)">
                                 Please enter a valid <strong>email address</strong>
                             </mat-error>
                             <mat-error
-                                *ngIf="singupForm.get('email')?.invalid && (singupForm.get('email')?.dirty || singupForm.get('email')?.touched) && singupForm.get('email')?.errors?.required">
+                                *ngIf="singinForm.get('email')?.invalid && (singinForm.get('email')?.dirty || singinForm.get('email')?.touched) && singinForm.get('email')?.errors?.required">
                                 Email is <strong>required</strong>
                             </mat-error>
                         </mat-form-field>
@@ -60,7 +61,7 @@
     </mat-tab>
     <mat-tab>
         <ng-template mat-tab-label>
-            <mat-icon matPrefix class="example-tab-icon">account_circle</mat-icon>
+          
             Sign-up
         </ng-template>
         <app-sign-up></app-sign-up>
