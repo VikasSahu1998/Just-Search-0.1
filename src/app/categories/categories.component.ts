@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -12,7 +13,7 @@ export class CategoriesComponent {
  
   categoriesForm : FormGroup |any;
 
-  constructor(private formbuilder: FormBuilder) { }
+  constructor(private formbuilder: FormBuilder,private http: HttpClient) { }
 
   cards = [
     {
@@ -54,6 +55,15 @@ export class CategoriesComponent {
     );
   }
 
-
+  oncategoriesubmit() {
+    this.http.post<any>("http://localhost:3000/need", this.categoriesForm.value).subscribe(res => {
+      alert("signup Succesfully");
+      this.categoriesForm.reset();
+      
+    }, err => {
+      alert("error");
+    }
+    )
+  }
 
 }

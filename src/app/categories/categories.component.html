@@ -6,7 +6,7 @@
         </mat-card-title>
     </mat-card-header>
     <span><br></span>
-    <form [formGroup]="categoriesForm" novalidate class="d-flex-center">
+    <form [formGroup]="categoriesForm" novalidate (ngSubmit)="oncategoriesubmit()" class="d-flex-center">
         <!-- input type Name -->
         <mat-form-field class="example-full-width1" appearance="outline">
             <mat-label>Product Name</mat-label>
