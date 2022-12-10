@@ -5,13 +5,17 @@
 }
 
 
+
 .search {
     width: 40%;
-    display: flex;
-    margin: 0 auto;
+    margin-left: auto;
 }
 
-
 .example-form {
- margin-top: 5cm;
+    margin-top: 5cm;
+}
+
+.state {
+    margin-left: 25%;
+    width: 7%;
 }

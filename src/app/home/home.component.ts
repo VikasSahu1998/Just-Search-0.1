@@ -20,6 +20,41 @@ export class HomeComponent {
   Onhome(): void {
     this.router.navigate(['Home']);
   }
+
+  states: string[] = [
+    'Andhra Pradesh',
+    'ArunachalPradesh',
+    'Assam',
+    'Bihar',
+    'Chhattisgarh',
+    'Goa',
+    'Gujarat',
+    'Haryana',
+    'HimachalPradesh	',
+    'Jharkhand',
+    'Karnataka',
+    'Kerala',
+    'MadhyaPradesh	',
+    'Maharashtra',
+    'Manipur',
+    'Meghalaya',
+    'Mizoram',
+    'Nagaland',
+    'Odisha',
+    'Punjab',
+    'Rajasthan',
+    'Sikkim',
+    'Tamil Nadu	',
+    'Telangana',
+    'Tripura',
+    'UttarPradesh	',
+    'Uttarakhand',
+    'WestBengal	',
+   
+  ];
 }
+
+
+
 
 
