@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from '../shared/api.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class CategoriesComponent {
  
   categoriesForm : FormGroup |any;
 
-  constructor(private formbuilder: FormBuilder,private http: HttpClient) { }
+  constructor(private formbuilder: FormBuilder,private http: HttpClient, private api: ApiService) { }
 
   cards = [
     {
@@ -55,15 +56,30 @@ export class CategoriesComponent {
     );
   }
 
-  oncategoriesubmit() {
-    this.http.post<any>("http://localhost:3000/need", this.categoriesForm.value).subscribe(res => {
-      alert("signup Succesfully");
-      this.categoriesForm.reset();
+  // oncategoriesubmit() {
+  //   this.http.post<any>("http://localhost:3000/need", this.categoriesForm.value).subscribe(res => {
+  //     alert("signup Succesfully");
+  //     this.categoriesForm.reset();
       
-    }, err => {
-      alert("error");
+  //   }, err => {
+  //     alert("error");
+  //   }
+  //   )
+  // }
+
+  oncategoriesubmit(){
+    if(this.categoriesForm.valid){
+      this.api.postCategories(this.categoriesForm.value)
+      .subscribe({
+        next:(res)=>{
+          alert("details added successfully");
+          this.categoriesForm.reset();
+         },
+         error: () => {
+          alert("Something went wrong ");
+         }
+      })
     }
-    )
   }
 
 }

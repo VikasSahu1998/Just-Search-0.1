@@ -1,26 +1,9 @@
 {
   "signup": [
-    {
-      "name": "vikas",
-      "email": "sahu@gmail.com",
-      "PhoneNumber": "9856324756",
-      "password": "123456",
-      "confirmPassword": "123456",
-      "id": 1
-    }
+    
   ],
   "need": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    },
-    {
-      "name": "abc",
-      "email": "sahu@gmail.com",
-      "product": "Vikas",
-      "id": 2
-    }
+   
   ],
   "profile": {
     "name": "typicode"
