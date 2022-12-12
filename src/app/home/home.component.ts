@@ -30,8 +30,6 @@ export class HomeComponent implements OnInit {
   isSearching!: boolean;
 
   constructor(private router: Router, private api: ApiService, private httpClient: HttpClient) { this.isSearching = false; this.apiResponse = []; console.log(this.movieSearchInput); }
-  dataSource: any
-
 
   ngOnInit() {
 
@@ -68,13 +66,6 @@ export class HomeComponent implements OnInit {
 
     });
   }
-
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-
 
   Onhome(): void {
     this.router.navigate(['Home']);
