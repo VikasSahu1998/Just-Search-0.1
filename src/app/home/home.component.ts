@@ -16,7 +16,7 @@ export class HomeComponent {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
- 
+
   Onhome(): void {
     this.router.navigate(['Home']);
   }
@@ -50,7 +50,7 @@ export class HomeComponent {
     'UttarPradesh	',
     'Uttarakhand',
     'WestBengal	',
-   
+
   ];
 }
 
