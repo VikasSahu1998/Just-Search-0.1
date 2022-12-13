@@ -8,14 +8,16 @@
 
 .search {
     width: 40%;
+    display: flex;
     margin-left: auto;
+    margin-right: auto;
 }
 
 .example-form {
     margin-top: 5cm;
 }
 
-.state {
+/* .state {
     margin-left: 25%;
     width: 7%;
-}
+} */

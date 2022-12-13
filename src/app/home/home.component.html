@@ -3,14 +3,14 @@
     <img src="assets/JustSearch.png" alt="Google" srcset="" class="size">
   </div>
   <br>
-  <mat-form-field matPrefix appearance="outline" class="state">
+  <!-- <mat-form-field matPrefix appearance="outline" class="state">
     <mat-icon matPrefix> location_on</mat-icon>
     <mat-label>State</mat-label>
     <mat-select>
       <mat-option>None</mat-option>
       <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
     </mat-select>
-  </mat-form-field>
+  </mat-form-field> -->
   <mat-form-field class="search" appearance="outline">
     <input matInput #movieSearchInput class="form-control" placeholder="Just-Search" #input>
     <mat-icon matSuffix>zoom_in</mat-icon>
