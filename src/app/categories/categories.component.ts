@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ApiService } from '../shared/api.service';
 
 
@@ -14,7 +15,7 @@ export class CategoriesComponent {
  
   categoriesForm : FormGroup |any;
 
-  constructor(private formbuilder: FormBuilder,private http: HttpClient, private api: ApiService) { }
+  constructor(private formbuilder: FormBuilder,private http: HttpClient, private api: ApiService,private toastr: ToastrService) { }
 
   cards = [
     {
@@ -72,11 +73,11 @@ export class CategoriesComponent {
       this.api.postCategories(this.categoriesForm.value)
       .subscribe({
         next:(res)=>{
-          alert("details added successfully");
+          this.toastr.success('details added successfully', 'successfully', { timeOut: 2000, });
           this.categoriesForm.reset();
          },
          error: () => {
-          alert("Something went wrong ");
+          this.toastr.error('error while adding  the data', 'error', { timeOut: 2000, });
          }
       })
     }

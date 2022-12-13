@@ -6,6 +6,7 @@ import { SignUpComponent } from '../sign-up/sign-up.component';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../shared/api.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class SignInComponent {
   public showPassword: boolean = false;
   singinForm: FormGroup | any;
 
-  constructor(private formbuilder: FormBuilder, private router: Router, public dialog: MatDialog, private http: HttpClient, private dialogref: MatDialogRef<SignInComponent>, private api: ApiService) { }
+  constructor(private formbuilder: FormBuilder, private router: Router,private toastr: ToastrService,
+     public dialog: MatDialog, private http: HttpClient, private dialogref: MatDialogRef<SignInComponent>, private api: ApiService) { }
   ngOnInit(): void {
     this.singinForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -66,17 +68,17 @@ export class SignInComponent {
 
         })
         if (user) {
-          alert("signin Succesfully");
+          this.toastr.success('Signin successfully', 'successfully', { timeOut: 2000, });
           this.singinForm.reset();
           this.dialogref.close('save');
           this.router.navigate(['Home']);
 
         } else {
-          alert("user not found");
+          this.toastr.error('user not found', 'error', { timeOut: 2000, });
         }
 
       }, err => {
-        alert("server error");
+        this.toastr.error('Server error', 'error', { timeOut: 2000, });
       }
       )
   }

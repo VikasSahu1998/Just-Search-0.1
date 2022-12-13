@@ -25,7 +25,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatSelectModule} from '@angular/material/select';
-
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -57,7 +57,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatListModule,
     MatDialogModule,
     MatTabsModule,
-    MatSelectModule
+    MatSelectModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

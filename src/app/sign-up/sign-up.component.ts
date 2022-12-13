@@ -6,6 +6,7 @@ import { SignInComponent } from '../sign-in/sign-in.component';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../shared/api.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-sign-up',
@@ -29,7 +30,8 @@ export class SignUpComponent {
 
   singupForm: FormGroup | any;
 
-  constructor(private formbuilder: FormBuilder, private router: Router, public dialog: MatDialog, private http: HttpClient ,private dialogref: MatDialogRef<SignUpComponent>,private api: ApiService) { }
+  constructor(private formbuilder: FormBuilder, private router: Router,private toastr: ToastrService,
+     public dialog: MatDialog, private http: HttpClient ,private dialogref: MatDialogRef<SignUpComponent>,private api: ApiService) { }
 
   ngOnInit(): void {
     this.singupForm = new FormGroup({
@@ -69,11 +71,11 @@ export class SignUpComponent {
       this.api.postSingup(this.singupForm.value)
       .subscribe({
         next:(res)=>{
-          alert("signup Succesfully");
+          this.toastr.success('User added successfully', 'successfully', { timeOut: 2000, });
           this.singupForm.reset();
          },
          error: () => {
-          alert("Something went wrong ");
+          this.toastr.error('error while updating the data', 'error', { timeOut: 2000, });
          }
       })
     }
