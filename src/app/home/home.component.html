@@ -1,9 +1,10 @@
-<form class="example-form">
-  <div>
-    <img src="assets/JustSearch.png" alt="Google" srcset="" class="size">
-  </div>
-  <br>
-  <!-- <mat-form-field matPrefix appearance="outline" class="state">
+<div class="example-container" cdkScrollable>
+  <form class="example-form">
+    <div>
+      <img src="assets/JustSearch.png" alt="Google" srcset="" class="size">
+    </div>
+    <br>
+    <!-- <mat-form-field matPrefix appearance="outline" class="state">
     <mat-icon matPrefix> location_on</mat-icon>
     <mat-label>State</mat-label>
     <mat-select>
@@ -11,47 +12,48 @@
       <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
     </mat-select>
   </mat-form-field> -->
-  <mat-form-field class="search" appearance="outline">
-    <input matInput #movieSearchInput class="form-control" placeholder="Just-Search" #input>
-    <mat-icon matSuffix>zoom_in</mat-icon>
-    <mat-icon matSuffix>mic_none</mat-icon>
-  </mat-form-field>
-  <div class="row" *ngIf="isSearching">
-    <div class="col-12 text-center">
-
-      <h4>Searching ... </h4>
-
-    </div>
-  </div>
-  <div class="row">
-    <ng-container *ngIf="apiResponse['Response'] == 'False'; else elseTemplate">
-
+    <mat-form-field class="search" appearance="outline">
+      <input matInput #movieSearchInput class="form-control" placeholder="Just-Search" #input>
+      <mat-icon matSuffix>zoom_in</mat-icon>
+      <mat-icon matSuffix>mic_none</mat-icon>
+    </mat-form-field>
+    <div class="row" *ngIf="isSearching">
       <div class="col-12 text-center">
-        <div class="alert alert-danger" role="alert">
-          {{apiResponse['Error']}}
 
-        </div>
+        <h4>Searching ... </h4>
+
       </div>
+    </div>
+    <div class="row">
+      <ng-container *ngIf="apiResponse['Response'] == 'False'; else elseTemplate">
 
-    </ng-container>
-    <ng-template #elseTemplate>
+        <div class="col-12 text-center">
+          <div class="alert alert-danger" role="alert">
+            {{apiResponse['Error']}}
 
-
-      <div class="col-12" *ngFor="let movie of apiResponse['Search']" style="margin-left: 35%;">
-
-        <div class="card w-25" style="margin:5px;">
-          <!-- <img class="card-img-top" src="{{movie['Poster']}}"> -->
-          <div class="card-body">
-            <h5 class="card-title">{{movie['Title']}}</h5>
-            <p class="card-text">Year: {{movie['Year']}}</p>
           </div>
         </div>
-      </div>
 
-    </ng-template>
-  </div>
-</form>
+      </ng-container>
+      <ng-template #elseTemplate>
 
+
+        <div class="col-12" *ngFor="let movie of apiResponse['Search']" style="margin-left: 35%;">
+
+          <div class="card w-25" style="margin:5px;">
+            <!-- <img class="card-img-top" src="{{movie['Poster']}}"> -->
+            <div class="card-body">
+              <h5 class="card-title">{{movie['Title']}}</h5>
+              <p class="card-text">Year: {{movie['Year']}}</p>
+            </div>
+          </div>
+        </div>
+
+      </ng-template>
+    </div>
+  </form>
+  <span><br><br><br></span>
+</div>
 
 
 <!-- <div style="margin: 50px;">

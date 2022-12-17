@@ -24,8 +24,11 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { ToastrModule } from 'ngx-toastr';
+import { AirTicketComponent } from './SideNavBar/air-ticket/air-ticket.component';
+import { MatCommonModule, MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,7 @@ import { ToastrModule } from 'ngx-toastr';
     FooterComponent,
     HeaderComponent,
     CategoriesComponent,
+    AirTicketComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +62,9 @@ import { ToastrModule } from 'ngx-toastr';
     MatDialogModule,
     MatTabsModule,
     MatSelectModule,
+    MatDatepickerModule,
+    MatCommonModule,
+    MatNativeDateModule,
     ToastrModule.forRoot(),
   ],
   providers: [],

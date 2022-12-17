@@ -1,0 +1,138 @@
+<ul class="nav justify-content-center">
+    <li class="nav-item">
+        <a class="nav-link">Active</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link">Active</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link">Active</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link">Link</a>
+    </li>
+</ul>
+<span><br></span>
+<span><br></span>
+<div class="butt1">
+    <h1>BOOK FLIGHT TICKETS</h1>
+</div>
+
+
+<mat-card class="example-card">
+    <span><br></span>
+    <span><br></span>
+
+
+
+    <form [formGroup]="airticketForm" novalidate (ngSubmit)="onAirticketSubmit()" class="d-flex-center">
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Toppings</mat-label>
+                        <mat-select formControlName="toppings" Single>
+
+                            <mat-option *ngFor="let topping of toppingList" [value]="topping"> {{ topping.name
+                                }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Toppings</mat-label>
+                        
+
+                            <mat-option>
+                                <div class="container">
+                                    <div class="row">
+                                        <h3>human<button mat-button class="plusminus" (click)="handleMinus()">-</button>
+                                            <input matInput class="num" value="0" [(ngModel)]="value" />
+                                            <button mat-button class="plusminus" (click)="handlePlus()">+</button></h3>
+                                    </div>
+                                </div>
+                            </mat-option>
+                     
+                    </mat-form-field>
+                </td>
+                <td>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Toppings</mat-label>
+                        <mat-select formControlName="class" Single>
+
+                            <mat-option *ngFor="let classLists of classList"
+                                [value]="classLists">{{classLists.name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr>
+
+        </table>
+        <table class="example-full-width" cellspacing="0">
+
+            <tr>
+                <td>
+                    <!-- input type Name -->
+                    <mat-form-field appearance="outline">
+                        <mat-label>Full Name</mat-label>
+                        <input matInput placeholder="Enter your name" formControlName="name">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+                        <mat-error
+                            *ngIf="airticketForm.get('name')?.invalid && (airticketForm.get('name')?.dirty || airticketForm.get('name')?.touched) && airticketForm.get('name')?.errors?.required">
+                            Name is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <!-- input type Name -->
+                    <mat-form-field appearance="outline">
+                        <mat-label>Product Name</mat-label>
+                        <input matInput placeholder="Enter Product/Service Name" formControlName="product">
+                        <mat-icon matSuffix>perm_identity</mat-icon>
+
+                        <mat-error
+                            *ngIf="airticketForm.get('product')?.invalid && (airticketForm.get('product')?.dirty || airticketForm.get('product')?.touched) && airticketForm.get('product')?.errors?.required">
+                            product is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+        <!-- input type Name -->
+        <mat-form-field appearance="outline">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+                <input matStartDate placeholder="Start date">
+                <input matEndDate placeholder="End date">
+            </mat-date-range-input>
+            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+
+        <mat-divider></mat-divider>
+        <!-- button Submit -->
+        <mat-card-actions>
+            <button class="butt1" mat-raised-button color="primary" mat-button>Submit Requirement</button>
+        </mat-card-actions>
+    </form>
+</mat-card>

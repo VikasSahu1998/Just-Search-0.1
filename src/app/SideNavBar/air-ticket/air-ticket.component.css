@@ -1,0 +1,28 @@
+.example-card {
+    max-width: 40%;
+    display: flex;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 10%;
+}
+
+mat-form-field {
+    width: 80%;
+    display: flex;
+    margin: auto;
+}
+
+.butt1 {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.example-full-width {
+    width: 100%;
+    align-items: center;
+    padding: 5px;
+}
+
+
