@@ -9,14 +9,13 @@ import { ApiService } from 'src/app/shared/api.service';
   styleUrls: ['./air-ticket.component.css']
 })
 export class AirTicketComponent implements OnInit {
-
+  selected = 'option2';
   airticketForm: FormGroup | any;
   constructor(private formbuilder: FormBuilder, private api: ApiService, private toastr: ToastrService) { }
   ngOnInit(): void {
     this.airticketForm = new FormGroup({
-      name: new FormControl('', [Validators.required,]),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      product: new FormControl('', [Validators.required,]),
+      LeavingFrom: new FormControl('', [Validators.required,]),
+      GoingTo: new FormControl('', [Validators.required,]),
       toppings: new FormControl('', [Validators.required,]),
       class: new FormControl('', [Validators.required,]),
     });

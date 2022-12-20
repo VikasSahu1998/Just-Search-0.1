@@ -46,7 +46,7 @@
                 <td>
 
                     <mat-form-field appearance="outline">
-                        <mat-label>Toppings</mat-label>
+
                         <mat-select formControlName="toppings" Single>
 
                             <mat-option *ngFor="let topping of toppingList" [value]="topping"> {{ topping.name
@@ -55,27 +55,45 @@
                     </mat-form-field>
                 </td>
                 <td>
-
                     <mat-form-field appearance="outline">
-                        <mat-label>Toppings</mat-label>
+                        <mat-select formControlName="toppings" multiple [(value)]="selected">
                         
-
-                            <mat-option>
-                                <div class="container">
-                                    <div class="row">
-                                        <h3>human<button mat-button class="plusminus" (click)="handleMinus()">-</button>
-                                            <input matInput class="num" value="0" [(ngModel)]="value" />
-                                            <button mat-button class="plusminus" (click)="handlePlus()">+</button></h3>
-                                    </div>
-                                </div>
+                            <mat-option value="option1">
+                                <span>Adults</span>
+                                <button mat-button class="plusminus" (click)="handleMinus()">-</button>
+                                <span>{{value}}</span>
+                                <button mat-button class="plusminus" (click)="handlePlus()">+</button>
                             </mat-option>
-                     
+                            <mat-option value="option2">
+                                <span>Children</span>
+                                <button mat-button class="plusminus" (click)="handleMinus()">-</button>
+                                <span>{{value}}</span>
+                                <button mat-button class="plusminus" (click)="handlePlus()">+</button>
+                                <h6>Aged 2-11</h6>
+
+                            </mat-option>
+                            <mat-option value="option3">
+                                <span>Infants</span>
+                                <button mat-button class="plusminus" (click)="handleMinus()">-</button>
+                                <span>{{value}}</span>
+                                <button mat-button class="plusminus" (click)="handlePlus()">+</button>
+                                <h6>In seat</h6>
+                            </mat-option> 
+                            <mat-option value="option4">
+                                <span>Infants</span>
+                                <button mat-button class="plusminus" (click)="handleMinus()">-</button>
+                                <span>{{value}}</span>
+                                <button mat-button class="plusminus" (click)="handlePlus()">+</button>
+                                <h6>On lap</h6>
+                            </mat-option>
+
+                        </mat-select>
                     </mat-form-field>
                 </td>
                 <td>
 
                     <mat-form-field appearance="outline">
-                        <mat-label>Toppings</mat-label>
+
                         <mat-select formControlName="class" Single>
 
                             <mat-option *ngFor="let classLists of classList"
@@ -92,26 +110,26 @@
                 <td>
                     <!-- input type Name -->
                     <mat-form-field appearance="outline">
-                        <mat-label>Full Name</mat-label>
-                        <input matInput placeholder="Enter your name" formControlName="name">
+                        <mat-label>Leaving From</mat-label>
+                        <input matInput placeholder="Type Departure City" formControlName="LeavingFrom">
                         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
 
                         <mat-error
-                            *ngIf="airticketForm.get('name')?.invalid && (airticketForm.get('name')?.dirty || airticketForm.get('name')?.touched) && airticketForm.get('name')?.errors?.required">
-                            Name is <strong>required</strong>
+                            *ngIf="airticketForm.get('LeavingFrom')?.invalid && (airticketForm.get('LeavingFrom')?.dirty || airticketForm.get('LeavingFrom')?.touched) && airticketForm.get('LeavingFrom')?.errors?.required">
+                            Leaving From is <strong>required</strong>
                         </mat-error>
                     </mat-form-field>
                 </td>
                 <td>
                     <!-- input type Name -->
                     <mat-form-field appearance="outline">
-                        <mat-label>Product Name</mat-label>
-                        <input matInput placeholder="Enter Product/Service Name" formControlName="product">
+                        <mat-label>Going To</mat-label>
+                        <input matInput placeholder="Type Destination City" formControlName="GoingTo">
                         <mat-icon matSuffix>perm_identity</mat-icon>
 
                         <mat-error
-                            *ngIf="airticketForm.get('product')?.invalid && (airticketForm.get('product')?.dirty || airticketForm.get('product')?.touched) && airticketForm.get('product')?.errors?.required">
-                            product is <strong>required</strong>
+                            *ngIf="airticketForm.get('GoingTo')?.invalid && (airticketForm.get('GoingTo')?.dirty || airticketForm.get('GoingTo')?.touched) && airticketForm.get('GoingTo')?.errors?.required">
+                            Going To is <strong>required</strong>
                         </mat-error>
                     </mat-form-field>
                 </td>

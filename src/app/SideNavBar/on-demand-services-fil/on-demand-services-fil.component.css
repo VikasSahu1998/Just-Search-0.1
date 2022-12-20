@@ -1,0 +1,9 @@
+/* Row hover bakground */
+mat-card :hover {
+    background-color: gray;
+}
+
+mat-icon {
+    padding: 7px;
+    margin-left: 90%;
+}

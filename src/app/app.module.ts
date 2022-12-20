@@ -29,6 +29,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AirTicketComponent } from './SideNavBar/air-ticket/air-ticket.component';
 import { MatCommonModule, MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { OnDemandServicesFilComponent } from './SideNavBar/on-demand-services-fil/on-demand-services-fil.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     HeaderComponent,
     CategoriesComponent,
     AirTicketComponent,
+    OnDemandServicesFilComponent,
   ],
   imports: [
     BrowserModule,

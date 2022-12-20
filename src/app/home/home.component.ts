@@ -103,6 +103,7 @@ export class HomeComponent implements OnInit {
 
   ];
 
+  
   searchGetCall(term: string) {
     if (term === '') {
       return of([]);

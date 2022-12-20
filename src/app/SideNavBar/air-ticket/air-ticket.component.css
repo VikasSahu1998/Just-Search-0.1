@@ -1,5 +1,5 @@
 .example-card {
-    max-width: 40%;
+    max-width: 50%;
     display: flex;
     margin: auto;
     margin-top: 2%;
@@ -7,9 +7,9 @@
 }
 
 mat-form-field {
-    width: 80%;
-    display: flex;
-    margin: auto;
+    padding: 10px;
+    width: 100%;
+
 }
 
 .butt1 {
