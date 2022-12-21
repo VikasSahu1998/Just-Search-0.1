@@ -30,6 +30,7 @@ import { AirTicketComponent } from './SideNavBar/air-ticket/air-ticket.component
 import { MatCommonModule, MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { OnDemandServicesFilComponent } from './SideNavBar/on-demand-services-fil/on-demand-services-fil.component';
+import { ShoppingComponent } from './SideNavBar/shopping/shopping.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { OnDemandServicesFilComponent } from './SideNavBar/on-demand-services-fi
     CategoriesComponent,
     AirTicketComponent,
     OnDemandServicesFilComponent,
+    ShoppingComponent,
   ],
   imports: [
     BrowserModule,

@@ -18,6 +18,7 @@ export class AirTicketComponent implements OnInit {
       GoingTo: new FormControl('', [Validators.required,]),
       toppings: new FormControl('', [Validators.required,]),
       class: new FormControl('', [Validators.required,]),
+    
     });
     const toSelect = this.toppingList.find((c) => c.id == 1);
     this.airticketForm.get('toppings').setValue(toSelect);
@@ -61,7 +62,7 @@ classList = [
 
   onAirticketSubmit() {
     if (this.airticketForm.valid) {
-      this.api.postCategories(this.airticketForm.value)
+      this.api.postAirticket(this.airticketForm.value)
         .subscribe({
           next: (res) => {
             this.toastr.success('details added successfully', 'successfully', { timeOut: 2000, });

@@ -44,19 +44,16 @@
         <table class="example-full-width" cellspacing="0">
             <tr>
                 <td>
-
                     <mat-form-field appearance="outline">
-
                         <mat-select formControlName="toppings" Single>
-
-                            <mat-option *ngFor="let topping of toppingList" [value]="topping"> {{ topping.name
-                                }}</mat-option>
+                            <mat-option *ngFor="let topping of toppingList" 
+                            [value]="topping">{{topping.name}}</mat-option>
                         </mat-select>
                     </mat-form-field>
                 </td>
                 <td>
                     <mat-form-field appearance="outline">
-                        <mat-select formControlName="toppings" multiple [(value)]="selected">
+                        <mat-select  multiple [(value)]="selected">
                         
                             <mat-option value="option1">
                                 <span>Adults</span>
@@ -91,11 +88,8 @@
                     </mat-form-field>
                 </td>
                 <td>
-
                     <mat-form-field appearance="outline">
-
                         <mat-select formControlName="class" Single>
-
                             <mat-option *ngFor="let classLists of classList"
                                 [value]="classLists">{{classLists.name}}</mat-option>
                         </mat-select>
@@ -136,13 +130,13 @@
             </tr>
         </table>
         <!-- input type Name -->
-        <mat-form-field appearance="outline">
+        <mat-form-field  appearance="outline">
             <mat-label>Enter a date range</mat-label>
-            <mat-date-range-input [rangePicker]="picker">
+            <mat-date-range-input  [rangePicker]="picker">
                 <input matStartDate placeholder="Start date">
                 <input matEndDate placeholder="End date">
             </mat-date-range-input>
-            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+            <mat-hint>MM/DD/YYYY - MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-date-range-picker #picker></mat-date-range-picker>
         </mat-form-field>

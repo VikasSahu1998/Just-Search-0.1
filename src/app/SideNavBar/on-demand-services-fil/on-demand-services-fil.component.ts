@@ -8,23 +8,52 @@ import { Component } from '@angular/core';
 export class OnDemandServicesFilComponent {
   cards = [
     {
-      title: 'Card Title 1',
+      title: 'Ac Repair',
     },
     {
-      title: 'Card Title 1',
+      title: 'Carpenters',
     },
     {
-      title: 'Card Title 1',
+      title: 'Chimney Repair',
     },
     {
-      title: 'Card Title 1',
+      title: 'Electricians',
     },
     {
-      title: 'Card Title 1',
+      title: 'Geyser Repair',
     },
     {
-      title: 'Card Title 1',
+      title: 'Home Cleaning',
     },
-    
+    {
+      title: 'Makeup & Hair Styling',
+    },
+    {
+      title: 'Microwave Repair',
+    },
+    {
+      title: 'Painters',
+    },
+    {
+      title: 'Pest Control Services',
+    },
+    {
+      title: 'Plumbers',
+    },
+    {
+      title: 'Refrigerator Repair',
+    },
+    {
+      title: 'Salon At Home',
+    },
+    {
+      title: 'TV Repair',
+    },
+    {
+      title: 'Washing Machine Repair',
+    },
+    {
+      title: 'Water Purifier Repair',
+    },
   ]
 }

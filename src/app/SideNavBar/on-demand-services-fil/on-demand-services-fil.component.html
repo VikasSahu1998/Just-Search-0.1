@@ -56,7 +56,16 @@
     <div *ngFor="let card of cards">
         <hr>
         <mat-card>
-            <mat-card-content>{{card.title}}  <mat-icon matSuffix >keyboard_arrow_right</mat-icon></mat-card-content>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col">
+                        <mat-label>{{card.title}}</mat-label>
+                    </div>
+                    <div class="col" align="end">
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                    </div>
+                </div>
+            </mat-card-content>
         </mat-card>
     </div>
     <span><br><br></span>

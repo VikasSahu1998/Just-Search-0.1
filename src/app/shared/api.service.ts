@@ -15,15 +15,18 @@ export class ApiService {
     return this.http.post<any>("http://localhost:3000/need/", data);
   }
 
+  postAirticket(data: any) {
+    return this.http.post<any>("http://localhost:3000/Airticket/", data);
+  }
   getLogin() {
     return this.http.get<any>("http://localhost:3000/signup/");
   }
 
-  putEmp(data: any, id: number) {
-    return this.http.put<any>("http://localhost:3000/emplist/" + id, data);
-  }
+  // putEmp(data: any, id: number) {
+  //   return this.http.put<any>("http://localhost:3000/emplist/" + id, data);
+  // }
 
-  deleteEmp(id: number) {
-    return this.http.delete<any>("http://localhost:3000/emplist/" + id);
-  }
+  // deleteEmp(id: number) {
+  //   return this.http.delete<any>("http://localhost:3000/emplist/" + id);
+  // }
 }
