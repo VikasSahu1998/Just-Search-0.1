@@ -17,7 +17,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { HeaderComponent } from './shared/header/header.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
@@ -30,7 +29,7 @@ import { AirTicketComponent } from './SideNavBar/air-ticket/air-ticket.component
 import { MatCommonModule, MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { OnDemandServicesFilComponent } from './SideNavBar/on-demand-services-fil/on-demand-services-fil.component';
-import { ShoppingComponent } from './SideNavBar/shopping/shopping.component';
+
 
 @NgModule({
   declarations: [
@@ -39,11 +38,9 @@ import { ShoppingComponent } from './SideNavBar/shopping/shopping.component';
     SignInComponent,
     SignUpComponent,
     FooterComponent,
-    HeaderComponent,
     CategoriesComponent,
     AirTicketComponent,
     OnDemandServicesFilComponent,
-    ShoppingComponent,
   ],
   imports: [
     BrowserModule,

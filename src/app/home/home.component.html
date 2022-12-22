@@ -1,22 +1,30 @@
 <div class="example-container" cdkScrollable>
   <form class="example-form">
     <div>
-      <img src="assets/JustSearch.png" alt="Google" srcset="" class="size">
+      <img src="assets/just-search-logo.png" alt="Google" srcset="" class="size">
     </div>
     <br>
-    <!-- <mat-form-field matPrefix appearance="outline" class="state">
-    <mat-icon matPrefix> location_on</mat-icon>
-    <mat-label>State</mat-label>
-    <mat-select>
-      <mat-option>None</mat-option>
-      <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
-    </mat-select>
-  </mat-form-field> -->
-    <mat-form-field class="search" appearance="outline">
-      <input matInput #movieSearchInput  placeholder="Just-Search" >
-      <mat-icon matSuffix>zoom_in</mat-icon>
-      <mat-icon matSuffix>mic_none</mat-icon>
-    </mat-form-field>
+
+    <div class="row">
+      <mat-form-field matPrefix appearance="outline" class="Country">
+        <mat-icon matPrefix> location_on</mat-icon>
+        <mat-label>Country</mat-label>
+        <mat-select>
+          <mat-option>None</mat-option>
+          <mat-option *ngFor='let country of countryData' [value]="country">
+            <img [src]="country.flags.png" class="example-option-img" alt="" height="20">&nbsp;
+            <span class="text">{{country.name.common}}</span>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="search" appearance="outline">
+        <input matInput #movieSearchInput placeholder="Just-Search">
+        <mat-icon matSuffix>zoom_in</mat-icon>
+        <mat-icon matSuffix>mic_none</mat-icon>
+      </mat-form-field>
+    </div>
+
     <div class="row" *ngIf="isSearching">
       <div class="col-12 text-center">
 

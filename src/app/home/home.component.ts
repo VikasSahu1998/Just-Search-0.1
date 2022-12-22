@@ -30,10 +30,14 @@ export class HomeComponent implements OnInit {
   isSearching!: boolean;
 
   constructor(private router: Router, private api: ApiService, private httpClient: HttpClient) { this.isSearching = false; this.apiResponse = []; console.log(this.movieSearchInput); }
-
+  countryData = null;
   ngOnInit() {
 
     // console.log(this.movieSearchInput);
+    this.api.getCountries().subscribe((data)=>{
+      this.countryData = data;
+  });
+
 
     fromEvent(this.movieSearchInput.nativeElement, 'keyup').pipe(
 
@@ -71,37 +75,37 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['Home']);
   }
 
-  states: string[] = [
-    'Andhra Pradesh',
-    'ArunachalPradesh',
-    'Assam',
-    'Bihar',
-    'Chhattisgarh',
-    'Goa',
-    'Gujarat',
-    'Haryana',
-    'HimachalPradesh	',
-    'Jharkhand',
-    'Karnataka',
-    'Kerala',
-    'MadhyaPradesh	',
-    'Maharashtra',
-    'Manipur',
-    'Meghalaya',
-    'Mizoram',
-    'Nagaland',
-    'Odisha',
-    'Punjab',
-    'Rajasthan',
-    'Sikkim',
-    'Tamil Nadu	',
-    'Telangana',
-    'Tripura',
-    'UttarPradesh	',
-    'Uttarakhand',
-    'WestBengal	',
+  // states: string[] = [
+  //   'Andhra Pradesh',
+  //   'ArunachalPradesh',
+  //   'Assam',
+  //   'Bihar',
+  //   'Chhattisgarh',
+  //   'Goa',
+  //   'Gujarat',
+  //   'Haryana',
+  //   'HimachalPradesh	',
+  //   'Jharkhand',
+  //   'Karnataka',
+  //   'Kerala',
+  //   'MadhyaPradesh	',
+  //   'Maharashtra',
+  //   'Manipur',
+  //   'Meghalaya',
+  //   'Mizoram',
+  //   'Nagaland',
+  //   'Odisha',
+  //   'Punjab',
+  //   'Rajasthan',
+  //   'Sikkim',
+  //   'Tamil Nadu	',
+  //   'Telangana',
+  //   'Tripura',
+  //   'UttarPradesh	',
+  //   'Uttarakhand',
+  //   'WestBengal	',
 
-  ];
+  // ];
 
   
   searchGetCall(term: string) {

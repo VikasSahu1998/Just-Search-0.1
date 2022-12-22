@@ -5,19 +5,15 @@
 }
 
 
-
 .search {
     width: 40%;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .example-form {
-    margin-top: 5cm;
+    margin-top: 15px;
 }
 
-/* .state {
+.Country {
     margin-left: 25%;
-    width: 7%;
-} */
+    width: 10%;
+}

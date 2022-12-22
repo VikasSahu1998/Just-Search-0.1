@@ -22,6 +22,10 @@ export class ApiService {
     return this.http.get<any>("http://localhost:3000/signup/");
   }
 
+  getCountries() {
+    return this.http.get<any>("https://restcountries.com/v3.1/all");
+  }
+
   // putEmp(data: any, id: number) {
   //   return this.http.put<any>("http://localhost:3000/emplist/" + id, data);
   // }
